@@ -1,0 +1,26 @@
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nifti_viewer"
+version = "0.1.0"
+description = "A NIfTI viewer with fiducials, offering both a GUI and a CLI interface."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT License"}
+authors = [
+  { name = "Ido Haber", email = "ihaber@wisc.edu" },
+]
+dependencies = [
+  "nibabel",
+  "numpy",
+  "scipy",
+  "matplotlib",
+  "PyQt5",
+]
+
+[project.scripts]
+nifti_viewer_gui = "nifti_viewer.gui:main"
+nifti_viewer_cli = "nifti_viewer.cli:run_cli"
